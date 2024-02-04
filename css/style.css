@@ -1,0 +1,366 @@
+:root {
+  --primary: #f0a500;
+  --secondary: #dbdbdb;
+  --body: #111;
+  --success: #cf7500;
+}
+
+* {
+  list-style: none;
+}
+
+body {
+  font-family: "DM Sans", sans-serif !important;
+  color: #111;
+  background-color: #fff;
+  overflow-x: hidden;
+  /* min-height: 2000px; */
+}
+
+/* Navbar */
+#navbar {
+  padding: 1rem 7%;
+  background-color: #fff !important;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+}
+
+#navbar .navbar-logo {
+  width: 11%;
+}
+
+#navbar .navbar-logo img {
+  width: 100%;
+}
+
+#navbar .menu {
+  flex-grow: unset;
+}
+
+#navbar .menu ul li {
+  margin: 0 0.5rem;
+}
+
+#navbar .menu ul li a {
+  color: var(--body);
+}
+
+#navbar .menu ul li a:hover {
+  color: var(--primary);
+}
+
+#navbar .menu ul li.no-drop a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+#navbar .menu ul li.no-drop a:hover::after {
+  transform: scaleX(0.8);
+}
+
+#navbar .theme {
+  margin-left: 1rem;
+  padding: 0 2rem;
+  border-left: 2px solid var(--secondary);
+}
+
+#navbar .theme .theme-mode {
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px rgba(16, 16, 16, 0.5);
+  color: var(--body) !important;
+}
+
+/* Hero */
+#home {
+  height: 100vh;
+  padding: 1rem 7%;
+  overflow: hidden;
+  position: relative;
+}
+
+#home::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 20%;
+  width: 100%;
+  background: linear-gradient(0deg, rgb(255, 255, 255) 15%, rgba(25,25,25,0) 50%);
+}
+
+#home .row .hero-title {
+  padding: 12rem 0 0;
+}
+
+#home .row .hero-title h3 {
+  font-size: 1rem;
+  color: var(--primary);
+  text-shadow: 1px 1px 3px rgba(199, 199, 199, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+#home .row .hero-title h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(16, 16, 16, 0.5);
+}
+
+#home .row .hero-title a {
+  font-size: 1rem;
+  font-weight: 800;
+  outline: none;  
+  border: none;
+  color: white;
+  background-color: var(--primary);
+}
+
+#home .row .hero-img .row {
+  transform: rotate(6deg);
+}
+
+#home .row .hero-img .row .col-md-6,
+#home .row .hero-img .row .col-md-12,
+#home .row .hero-img .row .col-md-5 .row .col-md-12 {
+  background-color: var(--secondary) !important;
+}
+
+#home .row .hero-img .row .col-md-5 .row {
+  transform: rotate(0deg);
+}
+
+/* Ragam */
+#ragam {
+  padding: 6rem 7%;
+  min-height: 100vh;
+}
+
+#ragam .ragam-title h3 {
+  font-size: 1rem;
+  color: var(--primary);
+  text-shadow: 1px 1px 3px rgba(219, 219, 219, 0.5);
+  margin: .5rem 0;
+}
+
+#ragam .ragam-title h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-shadow: 1px 1px 3px rgba(16, 16, 16, 0.5);
+}
+
+#ragam .ragam-title p {
+  font-size: .8rem;
+  font-weight: 200;
+  width: 30rem;
+  margin: .5rem auto;
+}
+
+#ragam .ragam-card .col-lg-3 {
+  background-color: var(--secondary) !important;
+  border: none;
+  width: 250px;
+  padding: 12rem 0;
+  margin-top: 1.5rem;
+}
+
+#ragam .ragam-card h5 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-shadow: 1px 1px 3px rgba(16, 16, 16, 0.5);
+}
+
+#ragam .ragam-card p {
+  font-size: .8rem;
+  font-weight: 400;
+  text-shadow: 1px 1px 3px rgba(16, 16, 16, 0.5);
+}
+
+#ragam .ragam-card a {
+  color: #fff;
+  background-color: var(--primary);
+  padding: .3rem 1rem;
+  font-size: .8rem;
+}
+
+/* Quote */
+#quote {
+  background-color: var(--primary);
+  padding: 4rem 7%;
+  color: white;
+}
+
+#quote p {
+  font-size: 1.5rem;
+  width: 60rem;
+  margin: 0 auto 2.5rem;
+}
+
+#quote h3 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+#quote small {
+  font-size: .8rem;
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* Footer */
+footer {
+  background-color: var(--body);
+  padding: 3rem 7% 1rem;
+  color: #fff;
+}
+
+footer .footer-row {
+  padding: 1rem 0 1rem;
+  border-bottom: 2px solid #fff;
+}
+
+footer .footer-logo p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 300;
+  width: 23rem;
+}
+
+footer .footer-navigation h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+footer .footer-navigation ul {
+  padding: .2rem;
+}
+
+footer .footer-navigation ul li {
+  font-size: .8rem;
+  margin-bottom: .8rem;
+}
+
+
+/* Media Query */
+/* Laptop */
+@media (max-width: 1024px) {
+  #navbar .theme {
+    margin-left: 0;
+    padding: 0;
+    border-left: none;
+  }
+
+  #navbar .menu ul {
+    margin: 1rem 0 0;
+  }
+
+  #navbar .menu ul li {
+    margin: 0;
+  }
+
+  #navbar .menu ul li.no-drop a::after {
+    transform-origin: 0 0;
+    width: 3rem;
+  }
+
+  #navbar .menu ul li.dropdown {
+    margin: 0.1rem 0 0.5rem;
+  }
+
+  #home {
+    min-height: 100vh;
+  }
+
+  #home::after {
+    background: none;
+  }
+  
+  #home .row .hero-title {
+    padding: 8rem 0 0;
+  }
+  
+  #home .hero-title {
+    text-align: center;
+  }
+
+  #home .row .hero-img {
+    background-color: #dbdbdb ;
+  }
+
+  /* #home {
+    background-color: #cf7500;
+  } */
+
+  #ragam .ragam-card {
+    /* background-color: aqua; */
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    /* margin-left: 0;
+    /* position: absolute; */
+    /* width: 100vw; */
+  } 
+
+  #ragam .ragam-card .col-lg-3 {
+    width: 46%;
+    margin-left: .2rem;
+  }
+
+  #quote p {
+    width: 100%;
+    font-size: 95%;
+  } 
+
+  footer .footer-row .row{
+    margin-top: 1.5rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 80%;
+  }
+
+  #home .hero-title {
+    width: 43rem;
+    height: 35rem;
+    margin: 2.5rem auto;
+  }
+
+  #home .hero-title a {
+    margin-top: 1.5rem;
+  }
+
+  #ragam .ragam-card {
+    /* background-color: #111; */
+    overflow: hidden;
+  }
+
+  #ragam .ragam-card .col-lg-3 {
+    width: 100%;
+    margin-left: 1.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  #home .hero-title {
+    width: 40rem;
+    height: 35rem;
+    margin: 2.5rem auto;
+  }
+}
