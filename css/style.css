@@ -161,61 +161,64 @@ body {
   background-color: var(--grey);
 }
 
-/* Ragam */
-#ragam {
-  padding: 6rem 7%;
+/* Destinasi */
+#destinasi {
+  padding: 8rem 7%;
   min-height: 100vh;
 }
 
-#ragam .ragam-title h3 {
-  font-size: 1rem;
-  color: var(--primary);
+#destinasi .destinasi-title h4 {
+  font-size: 1.2rem;
+  color: var(--secondary);
   text-shadow: 1px 1px 3px rgba(219, 219, 219, 0.5);
-  margin: .5rem 0;
+  margin: 2rem 0 1.2rem;
 }
 
-#ragam .ragam-title h2 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  text-shadow: 1px 1px 3px rgba(16, 16, 16, 0.5);
+#destinasi .destinasi-title h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  /* text-shadow: 1px 1px 3px rgba(16, 16, 16, 0.5); */
 }
 
-#ragam .ragam-title p {
-  font-size: .8rem;
-  font-weight: 200;
-  width: 30rem;
-  margin: .5rem auto;
+#destinasi .destinasi-title p {
+  font-size: .9rem;
+  /* font-weight: 200; */
+  /* width: 30rem; */
+  color: var(--dark);
+  margin: .8rem auto;
 }
 
-#ragam .ragam-card .col-lg-3 {
-  background-color: var(--secondary) !important;
+#destinasi .carousel-indicators [data-bs-target] {
+  background-color: var(--dark);
+  background-clip: unset;
+  width: 20px;
+  height: 1px;
+  margin: 0 .3rem;
+  border-radius: 50%;
+}
+
+#destinasi .carousel-indicators .active {
+  background-color: var(--secondary);
+}
+
+#destinasi .destinasi-card a {
+  background-color: var(--secondary);
   border: none;
-  width: 250px;
-  padding: 12rem 0;
-  margin-top: 1.5rem;
-}
-
-#ragam .ragam-card h5 {
-  font-size: 1.5rem;
-  font-weight: 800;
-  text-shadow: 1px 1px 3px rgba(16, 16, 16, 0.5);
-}
-
-#ragam .ragam-card p {
-  font-size: .8rem;
-  font-weight: 400;
-  text-shadow: 1px 1px 3px rgba(16, 16, 16, 0.5);
-}
-
-#ragam .ragam-card a {
+  width: 180px;
+  padding: 10px;
   color: #fff;
-  background-color: var(--primary);
-  padding: .3rem 1rem;
-  font-size: .8rem;
+  margin-top: 1rem;
 }
 
 /* Quote */
+#quote {
+  min-height: 100vh;
+  padding: 5rem 7%;
+}
 
+#quote .carousel-control-prev-icon {
+  background: none;
+}
 
 /* Footer */
 footer {
@@ -292,7 +295,7 @@ footer .footer-navigation ul li {
   
   #home .hero-title {
     width: 45rem;
-    margin: 5rem auto 5rem;
+    margin: 2rem auto 1rem;
     text-align: center;
   }
   
@@ -308,22 +311,6 @@ footer .footer-navigation ul li {
   /* #home {
     background-color: #cf7500;
   } */
-
-  #ragam .ragam-card {
-    /* background-color: aqua; */
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    align-content: center;
-    /* margin-left: 0;
-    /* position: absolute; */
-    /* width: 100vw; */
-  } 
-
-  #ragam .ragam-card .col-lg-3 {
-    width: 46%;
-    margin-left: .2rem;
-  }
 
   #quote p {
     width: 100%;
@@ -359,14 +346,22 @@ footer .footer-navigation ul li {
     grid-row-start: span 2;
   }
 
-  #ragam .ragam-card {
-    /* background-color: #111; */
-    overflow: hidden;
+  /* #destinasi .destinasi-card {
+    background-color: #028E58;
+  } */
+
+  #destinasi .destinasi-card a {
+    background-color: var(--secondary);
+    border: none;
+    width: 120px;
+    padding: 4px;
+    color: #fff;
+    margin-top: 1rem;
   }
 
-  #ragam .ragam-card .col-lg-3 {
-    width: 100%;
-    margin-left: 1.5rem;
+  #destinasi .carousel-indicators [data-bs-target] {
+    width: 20px;
+    /* height: .01px; */
   }
 }
 
@@ -375,9 +370,9 @@ footer .footer-navigation ul li {
     font-size: 50%;
   }
 
-  #home {
+  /* #home {
     background-color: #dbdbdb;
-  }
+  } */
 
   #home .hero-title {
     width: 80%;
@@ -403,5 +398,30 @@ footer .footer-navigation ul li {
 
   #home .hero-img .hero-card:nth-child(2) {
     grid-row-start: span 1;
+  }
+
+  #destinasi .destinasi-card .row {
+    display: block;
+    height: 50%;
+  }
+
+  #destinasi .destinasi-card .row .card {
+    width: 80%;
+    margin: auto;
+    /* height: 50%; */
+  }
+  
+  #destinasi .destinasi-card .row svg.img-fluid.bd-placeholder-img {
+    width: 100%;
+    height: 50% !important;
+  }
+
+  #destinasi .destinasi-card .carousel-inner {
+    /* background-color: #028E58; */
+    padding: 0 0 3rem;
+  }
+
+  #destinasi .destinasi-card .carousel-indicators {
+    margin-top: 2rem;
   }
 }
