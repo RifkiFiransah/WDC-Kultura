@@ -1,16 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kultura Indonesia</title>
+  <meta name="description"
+    content="Kultura Indonesia - telusuri destinasi, sejarah, budaya, dan peta panduan wisata Jawa Barat." />
+  <title>Kultura Indonesia - Jelajah Jawa Barat</title>
+
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("kultura-theme");
+        document.documentElement.dataset.theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      } catch (error) {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
+
+  <!-- Icon -->
+  <link rel="icon" href="./img/logo/icon-kultura.png" />
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
-  <!-- Featcher Icons -->
+  <!-- Feather Icons -->
   <script src="https://unpkg.com/feather-icons"></script>
 
   <!-- Fonts -->
@@ -30,7 +48,7 @@
   <!-- Start Navbar -->
   <nav class="navbar navbar-expand-lg shadow bg-body-tertiary" id="navbar">
     <div class="container-fluid">
-      <a class="navbar-brand navbar-logo" href="#"><img src="img/logo/kultura.jpeg" alt="Logo-Kultura" /></a>
+      <a class="navbar-brand navbar-logo" href="index.html"><img src="img/logo/kultura.jpeg" alt="Logo Kultura" /></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -38,43 +56,39 @@
       <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item no-drop">
-            <a class="nav-link" aria-current="page" href="#home">Beranda</a>
+            <a class="nav-link active" aria-current="page" href="index.html">Beranda</a>
           </li>
           <li class="nav-item no-drop">
-            <a class="nav-link" href="#destination">Destinasi</a>
+            <a class="nav-link" href="destinasi.html">Destinasi</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="destinasi.html" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
               Jelajah
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </li>
+              <li><a class="dropdown-item" href="destinasi.html#alam">Wisata Alam</a></li>
+              <li><a class="dropdown-item" href="destinasi.html#budaya">Wisata Budaya</a></li>
+              <li><a class="dropdown-item" href="destinasi.html#kuliner">Kuliner Khas</a></li>
             </ul>
           </li>
           <li class="nav-item no-drop">
-            <a class="nav-link" href="#sejarah">Sejarah</a>
+            <a class="nav-link" href="sejarah.html">Sejarah</a>
           </li>
           <li class="nav-item no-drop">
-            <a class="nav-link" href="#budaya">Budaya</a>
+            <a class="nav-link" href="budaya.html">Budaya</a>
           </li>
           <li class="nav-item no-drop">
-            <a class="nav-link" href="#map">Peta Panduan</a>
+            <a class="nav-link" href="peta.html">Peta Panduan</a>
           </li>
         </ul>
         <div class="theme">
-          <a href="#" class="theme-mode"><i data-feather="moon"></i></a>
+          <button type="button" id="themeToggle" class="theme-mode" aria-label="Gunakan tema gelap"
+            aria-pressed="false">
+            <i data-feather="moon" class="theme-icon--moon" aria-hidden="true"></i>
+            <i data-feather="sun" class="theme-icon--sun" aria-hidden="true"></i>
+          </button>
         </div>
-        <!-- <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> -->
       </div>
     </div>
   </nav>
@@ -84,137 +98,108 @@
   <section class="hero" id="home">
     <div class="container-fluid">
       <div class="hero-title">
-        <h2 class="text-center">Telusuri Pesona Wisata, Keindahan Alam, dan Kekayaan Budaya yang Memukau di Jawa Barat.
-        </h2>
+        <h3 class="hero-kicker">Indonesia Kaya</h3>
+        <h2>Telusuri Pesona Wisata, Keindahan Alam, dan Kekayaan Budaya yang Memukau di Jawa Barat.</h2>
+        <p>Dari kawah vulkanik di dataran tinggi sampai tradisi kampung adat di pesisir selatan, Jawa Barat menyimpan
+          cerita yang layak dijelajahi.</p>
+        <div class="hero-actions">
+          <a href="destinasi.html" class="btn-kultura">Jelajahi Destinasi <i data-feather="arrow-right"></i></a>
+          <a href="peta.html" class="btn-kultura-outline">Buka Peta <i data-feather="map"></i></a>
+        </div>
       </div>
       <div class="hero-img">
         <div class="hero-card">
-          <div class="pict-1 rounded-4"></div>
+          <div class="pict-1 hero-pict hero-pict--1">
+            <i data-feather="triangle"></i>
+            <span>Kawah Putih</span>
+          </div>
         </div>
         <div class="hero-card">
-          <div class="pict-1 rounded-4"></div>
+          <div class="pict-1 hero-pict hero-pict--2">
+            <i data-feather="droplet"></i>
+            <span>Situ Patenggang</span>
+          </div>
         </div>
         <div class="hero-card">
-          <div class="pict-1 rounded-4"></div>
+          <div class="pict-1 hero-pict hero-pict--3">
+            <i data-feather="music"></i>
+            <span>Angklung</span>
+          </div>
         </div>
         <div class="hero-card">
-          <div class="pict-1 rounded-4"></div>
+          <div class="pict-1 hero-pict hero-pict--4">
+            <i data-feather="umbrella"></i>
+            <span>Pangandaran</span>
+          </div>
         </div>
         <div class="hero-card">
-          <div class="pict-1 rounded-4"></div>
+          <div class="pict-1 hero-pict hero-pict--5">
+            <i data-feather="home"></i>
+            <span>Keraton Kasepuhan</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
   <!-- End Hero -->
 
-  <!-- Start Ragam -->
+  <!-- Start Destinasi -->
   <section class="destinasi" id="destinasi">
     <div class="container-fluid">
       <div class="destinasi-title">
-        <h4 class="text-sm">Tujuan Wisata</h4>
+        <h4>Tujuan Wisata</h4>
         <h3 class="fw-bold">Kunjungi Tempat Populer</h3>
-        <p class="text-sm">This can be detailed description or just a short text.</p>
+        <p>Enam tempat yang mewakili lanskap dan cerita Jawa Barat, dari pegunungan hingga pesisir.</p>
       </div>
-      <div id="carouselExampleIndicators" class="carousel slide destinasi-card">
+      <div id="carouselDestinasi" class="carousel slide destinasi-card">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-            class="active text-success" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          <button type="button" data-bs-target="#carouselDestinasi" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselDestinasi" data-bs-slide-to="1"
             aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          <button type="button" data-bs-target="#carouselDestinasi" data-bs-slide-to="2"
             aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="row m-5">
+            <div class="row g-4 py-4 mx-0 px-lg-5">
               <div class="col-lg-6">
-                <div class="card mb-3" style="max-width: 100%;">
+                <div class="card mb-0">
                   <div class="row g-0 p-3">
                     <div class="col-md-4">
-                      <svg class="bd-placeholder-img img-fluid rounded" style="width:100%;height:200;"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#868e96"></rect>
-                      </svg>
+                      <div class="destinasi-pict destinasi-pict--green">
+                        <i data-feather="triangle"></i>
+                        <span>Wisata Alam</span>
+                      </div>
                     </div>
-                    <div class="col-md-8 col-sm-9">
+                    <div class="col-md-8">
                       <div class="card-body">
-                        <h5 class="card-title fw-bold">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                          additional content. This content is a little bit longer.</p>
-                        <a href="" class="btn">Lihat Selengkapnya</a>
+                        <h5 class="card-title fw-bold">Kawah Putih</h5>
+                        <p class="card-text">Danau vulkanik di Ciwidey dengan air kehijauan dan lanskap pasir putih yang
+                          khas.</p>
+                        <a href="destinasi.html#alam" class="btn-kultura btn-sm-kultura">Lihat Selengkapnya <i
+                            data-feather="arrow-right"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-lg-6">
-                <div class="card mb-3" style="max-width: 100%;">
+                <div class="card mb-0">
                   <div class="row g-0 p-3">
                     <div class="col-md-4">
-                      <svg class="bd-placeholder-img img-fluid rounded" style="width:100%;height:200;"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#868e96"></rect>
-                      </svg>
-                    </div>
-                    <div class="col-md-8 col-sm-9 title">
-                      <div class="card-body">
-                        <h5 class="card-title fw-bold">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                          additional content. This content is a little bit longer.</p>
-                        <a href="" class="btn">Lihat Selengkapnya</a>
+                      <div class="destinasi-pict destinasi-pict--blue">
+                        <i data-feather="umbrella"></i>
+                        <span>Wisata Alam</span>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row m-5">
-              <div class="col-lg-6">
-                <div class="card mb-3" style="max-width: 100%;">
-                  <div class="row g-0 p-3">
-                    <div class="col-md-4">
-                      <svg class="bd-placeholder-img img-fluid rounded" style="width:100%;height:200;"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#868e96"></rect>
-                      </svg>
-                    </div>
-                    <div class="col-md-8 col-sm-9">
+                    <div class="col-md-8">
                       <div class="card-body">
-                        <h5 class="card-title fw-bold">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                          additional content. This content is a little bit longer.</p>
-                        <a href="" class="btn">Lihat Selengkapnya</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="card mb-3" style="max-width: 100%;">
-                  <div class="row g-0 p-3">
-                    <div class="col-md-4">
-                      <svg class="bd-placeholder-img img-fluid rounded" style="width:100%;height:200;"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#868e96"></rect>
-                      </svg>
-                    </div>
-                    <div class="col-md-8 col-sm-9">
-                      <div class="card-body">
-                        <h5 class="card-title fw-bold">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                          additional content. This content is a little bit longer.</p>
-                        <a href="" class="btn">Lihat Selengkapnya</a>
+                        <h5 class="card-title fw-bold">Pantai Pangandaran</h5>
+                        <p class="card-text">Pantai di pesisir selatan dengan garis pantai panjang dan cagar alam yang
+                          masih terjaga.</p>
+                        <a href="destinasi.html#alam" class="btn-kultura btn-sm-kultura">Lihat Selengkapnya <i
+                            data-feather="arrow-right"></i></a>
                       </div>
                     </div>
                   </div>
@@ -223,41 +208,89 @@
             </div>
           </div>
           <div class="carousel-item">
-            <div class="row m-5">
+            <div class="row g-4 py-4 mx-0 px-lg-5">
               <div class="col-lg-6">
-                <div class="card mb-3" style="max-width: 100%;">
+                <div class="card mb-0">
                   <div class="row g-0 p-3">
                     <div class="col-md-4">
-                      <svg class="bd-placeholder-img img-fluid rounded" style="width:100%;height:200;"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#868e96"></rect>
-                      </svg>
+                      <div class="destinasi-pict destinasi-pict--dark">
+                        <i data-feather="triangle"></i>
+                        <span>Wisata Alam</span>
+                      </div>
                     </div>
-                    <div class="col-md-8 col-sm-9">
+                    <div class="col-md-8">
                       <div class="card-body">
-                        <h5 class="card-title fw-bold">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                          additional content. This content is a little bit longer.</p>
-                        <a href="" class="btn">Lihat Selengkapnya</a>
+                        <h5 class="card-title fw-bold">Gunung Tangkuban Perahu</h5>
+                        <p class="card-text">Kawah aktif di utara Bandung yang lekat dengan legenda Sangkuriang.</p>
+                        <a href="destinasi.html#alam" class="btn-kultura btn-sm-kultura">Lihat Selengkapnya <i
+                            data-feather="arrow-right"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-lg-6">
-                <div class="card mb-3" style="max-width: 100%;">
+                <div class="card mb-0">
                   <div class="row g-0 p-3">
-                    <div class="col-md-4 col-sm-6 bg-secondary">
-                      <!-- <img src="..." class="img-fluid rounded" alt="..."> -->
+                    <div class="col-md-4">
+                      <div class="destinasi-pict destinasi-pict--blue">
+                        <i data-feather="droplet"></i>
+                        <span>Wisata Alam</span>
+                      </div>
                     </div>
-                    <div class="col-md-8 col-sm-6">
+                    <div class="col-md-8">
                       <div class="card-body">
-                        <h5 class="card-title fw-bold">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                          additional content. This content is a little bit longer.</p>
-                        <a href="" class="btn">Lihat Selengkapnya</a>
+                        <h5 class="card-title fw-bold">Situ Patenggang</h5>
+                        <p class="card-text">Danau di dataran tinggi Rancabali yang dikaitkan dengan kisah Ki Santang dan
+                          Dewi Rengganis.</p>
+                        <a href="destinasi.html#alam" class="btn-kultura btn-sm-kultura">Lihat Selengkapnya <i
+                            data-feather="arrow-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row g-4 py-4 mx-0 px-lg-5">
+              <div class="col-lg-6">
+                <div class="card mb-0">
+                  <div class="row g-0 p-3">
+                    <div class="col-md-4">
+                      <div class="destinasi-pict destinasi-pict--grey">
+                        <i data-feather="home"></i>
+                        <span>Wisata Budaya</span>
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title fw-bold">Kampung Naga</h5>
+                        <p class="card-text">Kampung adat di Tasikmalaya yang menjaga rumah panggung dan tradisi
+                          warganya.</p>
+                        <a href="destinasi.html#budaya" class="btn-kultura btn-sm-kultura">Lihat Selengkapnya <i
+                            data-feather="arrow-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="card mb-0">
+                  <div class="row g-0 p-3">
+                    <div class="col-md-4">
+                      <div class="destinasi-pict destinasi-pict--yellow">
+                        <i data-feather="award"></i>
+                        <span>Wisata Budaya</span>
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title fw-bold">Keraton Kasepuhan</h5>
+                        <p class="card-text">Jejak Kesultanan Cirebon yang menyimpan arsitektur, koleksi, dan tradisi
+                          keraton.</p>
+                        <a href="destinasi.html#budaya" class="btn-kultura btn-sm-kultura">Lihat Selengkapnya <i
+                            data-feather="arrow-right"></i></a>
                       </div>
                     </div>
                   </div>
@@ -266,23 +299,181 @@
             </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev" style="width: 3.8rem;">
-          <i data-feather="chevron-left" style="color: #000;" aria-hidden="true"></i>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestinasi" data-bs-slide="prev">
+          <i data-feather="chevron-left" style="color: var(--body);" aria-hidden="true"></i>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next" style="width: 3.8rem;">
-          <i data-feather="chevron-right" style="color: #000;" aria-hidden="true"></i>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDestinasi" data-bs-slide="next">
+          <i data-feather="chevron-right" style="color: var(--body);" aria-hidden="true"></i>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
     </div>
   </section>
-  <!-- End Ragam -->
+  <!-- End Destinasi -->
+
+  <!-- Start Sejarah Preview -->
+  <section class="section section--muted" id="sejarah">
+    <div class="container-fluid">
+      <div class="section-head">
+        <span class="eyebrow">Jejak Masa Lalu</span>
+        <h2>Sejarah yang Membentuk Jawa Barat</h2>
+        <p>Jejak kerajaan, jalur perdagangan, dan kota kolonial masih bisa dibaca dari prasasti, situs, dan bangunan
+          yang berdiri hingga hari ini.</p>
+      </div>
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-7">
+          <div class="history-preview">
+            <div class="history-preview-item">
+              <span class="history-year">Abad ke-4</span>
+              <div>
+                <h3>Tarumanagara</h3>
+                <p>Kerajaan awal di Jawa Barat meninggalkan Prasasti Ciaruteun dan Kebon Kopi di kawasan Bogor.</p>
+              </div>
+            </div>
+            <div class="history-preview-item">
+              <span class="history-year">Abad ke-7</span>
+              <div>
+                <h3>Kerajaan Sunda</h3>
+                <p>Pusat kekuasaan di Pakuan menjadi salah satu poros kehidupan politik dan budaya di tatar Sunda.</p>
+              </div>
+            </div>
+            <div class="history-preview-item">
+              <span class="history-year">Abad ke-15</span>
+              <div>
+                <h3>Cirebon dan Banten</h3>
+                <p>Kesultanan pesisir tumbuh sebagai simpul perdagangan dan penyebaran Islam di bagian utara Jawa Barat.
+                </p>
+              </div>
+            </div>
+          </div>
+          <a href="sejarah.html" class="btn-kultura mt-4">Baca Sejarah Lengkap <i data-feather="arrow-right"></i></a>
+        </div>
+        <div class="col-lg-5">
+          <div class="history-facts h-100">
+            <h3>Jejak yang Bisa Dikunjungi</h3>
+            <ul class="fact-list">
+              <li><i data-feather="map-pin"></i><span>Prasasti Ciaruteun, Kabupaten Bogor</span></li>
+              <li><i data-feather="map-pin"></i><span>Situs Gunung Padang, Kabupaten Cianjur</span></li>
+              <li><i data-feather="map-pin"></i><span>Keraton Kasepuhan, Kota Cirebon</span></li>
+              <li><i data-feather="map-pin"></i><span>Gedung Sate, Kota Bandung</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Sejarah Preview -->
+
+  <!-- Start Budaya Preview -->
+  <section class="section" id="budaya">
+    <div class="container-fluid">
+      <div class="section-head center">
+        <span class="eyebrow">Ragam Budaya</span>
+        <h2>Budaya yang Tetap Hidup</h2>
+        <p>Seni pertunjukan, tradisi panen, dan kuliner menjadi cara masyarakat Sunda merawat ingatan kolektif.</p>
+      </div>
+      <div class="teaser-grid">
+        <article class="teaser-card">
+          <div class="icon-box">
+            <i data-feather="music"></i>
+          </div>
+          <h3>Angklung</h3>
+          <p>Alat musik bambu yang dimainkan bersama-sama, telah diakui sebagai warisan budaya dunia oleh UNESCO pada
+            2010.</p>
+        </article>
+        <article class="teaser-card">
+          <div class="icon-box icon-box--blue">
+            <i data-feather="users"></i>
+          </div>
+          <h3>Wayang Golek</h3>
+          <p>Pertunjukan boneka kayu yang membawakan kisah Mahabharata dan Ramayana dengan gaya khas Sunda.</p>
+        </article>
+        <article class="teaser-card">
+          <div class="icon-box icon-box--yellow">
+            <i data-feather="sun"></i>
+          </div>
+          <h3>Seren Taun</h3>
+          <p>Upacara syukur atas panen yang masih dilaksanakan sejumlah komunitas adat di Jawa Barat.</p>
+        </article>
+      </div>
+      <div class="text-center mt-4">
+        <a href="budaya.html" class="btn-kultura-outline">Lihat Semua Budaya <i data-feather="arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+  <!-- End Budaya Preview -->
+
+  <!-- Start Peta Preview -->
+  <section class="section section--muted" id="map">
+    <div class="container-fluid">
+      <div class="section-head">
+        <span class="eyebrow">Peta Panduan</span>
+        <h2>Rencanakan Perjalanan Anda</h2>
+        <p>Gunakan peta untuk melihat sebaran destinasi utama, lalu susun rute sesuai waktu dan minat perjalanan.</p>
+      </div>
+      <div class="map-preview">
+        <div class="map-frame">
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=106.30%2C-7.90%2C108.90%2C-5.80&layer=mapnik"
+            title="Peta Jawa Barat" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div>
+          <ul class="map-list">
+            <li>
+              <i data-feather="map-pin"></i>
+              <div>
+                <h3>Kawah Putih</h3>
+                <p>Ciwidey, Kabupaten Bandung</p>
+              </div>
+            </li>
+            <li>
+              <i data-feather="map-pin"></i>
+              <div>
+                <h3>Pantai Pangandaran</h3>
+                <p>Kabupaten Pangandaran</p>
+              </div>
+            </li>
+            <li>
+              <i data-feather="map-pin"></i>
+              <div>
+                <h3>Tangkuban Perahu</h3>
+                <p>Lembang, Kabupaten Bandung Barat</p>
+              </div>
+            </li>
+            <li>
+              <i data-feather="map-pin"></i>
+              <div>
+                <h3>Kampung Naga</h3>
+                <p>Salawu, Kabupaten Tasikmalaya</p>
+              </div>
+            </li>
+            <li>
+              <i data-feather="map-pin"></i>
+              <div>
+                <h3>Keraton Kasepuhan</h3>
+                <p>Kota Cirebon</p>
+              </div>
+            </li>
+          </ul>
+          <a href="peta.html" class="btn-kultura">Buka Peta Panduan <i data-feather="arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Peta Preview -->
 
   <!-- Start Quote -->
   <section class="quote" id="quote">
+    <div class="container-fluid">
+      <div class="quote-box">
+        <i data-feather="message-circle"></i>
+        <p>&ldquo;Jawa Barat bukan hanya tentang tempat yang dikunjungi, tetapi tentang cara hidup yang diwariskan dari
+          generasi ke generasi.&rdquo;</p>
+        <h3>Kultura Indonesia</h3>
+        <small>Catatan perjalanan</small>
+      </div>
+    </div>
   </section>
   <!-- End Quote -->
 
@@ -291,53 +482,46 @@
     <div class="container-fluid">
       <div class="row footer-row">
         <div class="col-lg-5 footer-logo">
-          <img src="./img/logo/kultura.jpeg" alt="logo-kultura" width="50%" />
+          <img src="./img/logo/kultura.jpeg" alt="Logo Kultura" />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-            error quia aut, nisi dignissimos deleniti nam esse est!
-            Necessitatibus.
+            Kultura Indonesia merangkum destinasi, sejarah, dan budaya Jawa Barat
+            untuk membantu perjalanan Anda lebih terarah.
           </p>
         </div>
-        <div class="col-lg-7 ps3">
+        <div class="col-lg-7">
           <div class="row footer-nav">
-            <div class="col-lg col-md-3 footer-navigation me-3">
-              <h3>Navigation</h3>
+            <div class="col-md-4 footer-navigation me-3">
+              <h3>Navigasi</h3>
               <ul>
-                <li>Beranda</li>
-                <li>Destinasi</li>
-                <li>Jelajah</li>
-                <li>Sejarah</li>
-                <li>Budaya</li>
-                <li>Peta Panduan</li>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="destinasi.html">Destinasi</a></li>
+                <li><a href="sejarah.html">Sejarah</a></li>
+                <li><a href="budaya.html">Budaya</a></li>
+                <li><a href="peta.html">Peta Panduan</a></li>
               </ul>
             </div>
-            <div class="col-lg col-md-3 footer-navigation me-3">
-              <h3>Navigation</h3>
+            <div class="col-md-4 footer-navigation me-3">
+              <h3>Jelajah</h3>
               <ul>
-                <li>Beranda</li>
-                <li>Destinasi</li>
-                <li>Jelajah</li>
-                <li>Sejarah</li>
-                <li>Budaya</li>
-                <li>Peta Panduan</li>
+                <li><a href="destinasi.html#alam">Wisata Alam</a></li>
+                <li><a href="destinasi.html#budaya">Wisata Budaya</a></li>
+                <li><a href="destinasi.html#kuliner">Kuliner Khas</a></li>
               </ul>
             </div>
-            <div class="col-lg col-md-3 footer-navigation">
-              <h3>Social Media</h3>
+            <div class="col-md-3 footer-navigation">
+              <h3>Ikuti Kami</h3>
               <ul>
-                <li>Facebook</li>
-                <li>Youtube</li>
-                <li>Twitter</li>
-                <li>Tiktom</li>
-                <li>Instagram</li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">YouTube</a></li>
+                <li><a href="#">Facebook</a></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <div class="row pt-4">
+      <div class="row footer-bottom">
         <div class="col-md-12">
-          <p>Copyright &copy; 2023. All Rights Reversed.</p>
+          <p>Copyright &copy; 2026 Kultura Indonesia. Hak cipta dilindungi.</p>
         </div>
       </div>
     </div>
@@ -349,7 +533,9 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
-  <!-- Feather Icon -->
+  <script src="./js/theme.js"></script>
+
+  <!-- Feather Icons -->
   <script>
     feather.replace();
   </script>

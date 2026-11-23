@@ -1,127 +1,332 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Budaya</title>
+<html lang="id">
 
-    <!-- Icon -->
-    <link rel="icon" href="./img/logo/icon-kultura.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Budaya Jawa Barat: tradisi, seni pertunjukan, rumah adat, kriya, dan kuliner khas masyarakat Sunda." />
+  <title>Budaya - Kultura Indonesia</title>
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("kultura-theme");
+        document.documentElement.dataset.theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      } catch (error) {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
 
-    <!-- Featcher Icons -->
-    <script src="https://unpkg.com/feather-icons"></script>
+  <!-- Icon -->
+  <link rel="icon" href="./img/logo/icon-kultura.png" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,500;0,9..40,800;1,9..40,800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
-    <!-- Our Style -->
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <body>
-    <!-- Start Navbar -->
-    <nav class="navbar navbar-expand-lg shadow bg-body-tertiary" id="navbar">
-      <div class="container-fluid">
-        <a class="navbar-brand navbar-logo" href="#"
-          ><img src="img/logo/kultura.jpeg" alt="Logo-Kultura"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item no-drop">
-              <a class="nav-link" aria-current="page" href="index.html"
-                >Beranda</a
-              >
-            </li>
-            <li class="nav-item no-drop">
-              <a class="nav-link" href="destination.html">Destinasi</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Jelajah
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item no-drop">
-              <a class="nav-link" href="sejarah.html">Sejarah</a>
-            </li>
-            <li class="nav-item no-drop">
-              <a class="nav-link" href="budaya.html">Budaya</a>
-            </li>
-          </ul>
-          <div class="theme">
-            <a href="#" class="theme-mode"><i data-feather="moon"></i></a>
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,500;0,9..40,800;1,9..40,800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Our Style -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <!-- Start Navbar -->
+  <nav class="navbar navbar-expand-lg shadow bg-body-tertiary" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand navbar-logo" href="index.html"><img src="img/logo/kultura.jpeg" alt="Logo Kultura" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item no-drop">
+            <a class="nav-link" href="index.html">Beranda</a>
+          </li>
+          <li class="nav-item no-drop">
+            <a class="nav-link" href="destinasi.html">Destinasi</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="destinasi.html" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Jelajah
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="destinasi.html#alam">Wisata Alam</a></li>
+              <li><a class="dropdown-item" href="destinasi.html#budaya">Wisata Budaya</a></li>
+              <li><a class="dropdown-item" href="destinasi.html#kuliner">Kuliner Khas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item no-drop">
+            <a class="nav-link" href="sejarah.html">Sejarah</a>
+          </li>
+          <li class="nav-item no-drop">
+            <a class="nav-link active" aria-current="page" href="budaya.html">Budaya</a>
+          </li>
+          <li class="nav-item no-drop">
+            <a class="nav-link" href="peta.html">Peta Panduan</a>
+          </li>
+        </ul>
+        <div class="theme">
+          <button type="button" id="themeToggle" class="theme-mode" aria-label="Gunakan tema gelap"
+            aria-pressed="false">
+            <i data-feather="moon" class="theme-icon--moon" aria-hidden="true"></i>
+            <i data-feather="sun" class="theme-icon--sun" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+
+  <!-- Start Page Hero -->
+  <section class="page-hero">
+    <div class="container-fluid">
+      <span class="eyebrow">Budaya</span>
+      <h1>Budaya yang Dirawat dari Generasi ke Generasi</h1>
+      <p>Tradisi pertanian, seni pertunjukan, arsitektur rumah, dan kuliner menjadi cara masyarakat Jawa Barat menjaga
+        hubungan dengan alam dan sesama.</p>
+    </div>
+  </section>
+  <!-- End Page Hero -->
+
+  <!-- Start Intro -->
+  <section class="section">
+    <div class="container-fluid">
+      <div class="section-head">
+        <span class="eyebrow">Pengantar</span>
+        <h2>Ragam Ekspresi Masyarakat Sunda</h2>
+        <p>Budaya Sunda tidak hanya tampil di panggung, tetapi juga hadir dalam cara memasak, membangun rumah, dan
+          merayakan panen. Sebagian tradisi masih berjalan, sebagian lain terus dihidupkan kembali oleh komunitas dan
+          sanggar.</p>
+      </div>
+    </div>
+  </section>
+  <!-- End Intro -->
+
+  <!-- Start Tradisi -->
+  <section class="section section--muted" id="tradisi">
+    <div class="container-fluid">
+      <div class="section-head">
+        <span class="eyebrow">Tradisi</span>
+        <h2>Upacara dan Ritual Komunitas</h2>
+        <p>Banyak tradisi berakar pada siklus pertanian dan hubungan masyarakat pesisir dengan laut.</p>
+      </div>
+      <div class="teaser-grid">
+        <article class="teaser-card">
+          <div class="icon-box icon-box--yellow">
+            <i data-feather="sun"></i>
           </div>
-          <!-- <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> -->
+          <h3>Seren Taun</h3>
+          <p>Upacara syukur atas panen yang masih dilaksanakan sejumlah komunitas adat, biasanya diiringi kesenian
+            tradisional.</p>
+        </article>
+        <article class="teaser-card">
+          <div class="icon-box">
+            <i data-feather="droplet"></i>
+          </div>
+          <h3>Hajat Laut</h3>
+          <p>Tradisi masyarakat pesisir sebagai ungkapan syukur dan permohonan keselamatan kepada laut.</p>
+        </article>
+        <article class="teaser-card">
+          <div class="icon-box icon-box--blue">
+            <i data-feather="users"></i>
+          </div>
+          <h3>Ngarot</h3>
+          <p>Tradisi di Indramayu yang berkaitan dengan kegiatan pertanian dan pertemuan warga desa.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- End Tradisi -->
+
+  <!-- Start Seni -->
+  <section class="section" id="seni">
+    <div class="container-fluid">
+      <div class="section-head">
+        <span class="eyebrow">Seni Pertunjukan</span>
+        <h2>Suara dan Gerak dari Tatar Sunda</h2>
+        <p>Angklung, wayang golek, dan jaipong menjadi tiga wajah seni yang paling dikenal dari Jawa Barat.</p>
+      </div>
+      <div class="teaser-grid">
+        <article class="teaser-card">
+          <div class="icon-box">
+            <i data-feather="music"></i>
+          </div>
+          <h3>Angklung</h3>
+          <p>Alat musik bambu yang dimainkan secara ansambel. Diakui sebagai warisan budaya dunia oleh UNESCO pada
+            2010.</p>
+        </article>
+        <article class="teaser-card">
+          <div class="icon-box icon-box--blue">
+            <i data-feather="users"></i>
+          </div>
+          <h3>Wayang Golek</h3>
+          <p>Pertunjukan boneka kayu yang membawakan kisah Mahabharata dan Ramayana dengan gaya penuturan Sunda.</p>
+        </article>
+        <article class="teaser-card">
+          <div class="icon-box icon-box--yellow">
+            <i data-feather="feather"></i>
+          </div>
+          <h3>Jaipongan</h3>
+          <p>Tari rakyat yang berkembang di Karawang dengan gerak dinamis dan iringan kendang yang khas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- End Seni -->
+
+  <!-- Start Rumah dan Kriya -->
+  <section class="section section--muted" id="rumah">
+    <div class="container-fluid">
+      <div class="section-head">
+        <span class="eyebrow">Rumah dan Kriya</span>
+        <h2>Arsitektur dan Keterampilan Tangan</h2>
+        <p>Bentuk rumah dan motif kain menyimpan pengetahuan tentang iklim, bahan lokal, dan lingkungan sekitar.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <article class="card-kultura">
+            <div class="icon-box">
+              <i data-feather="home"></i>
+            </div>
+            <h3>Rumah Julang Ngapak</h3>
+            <p>Rumah tradisional Sunda dengan bentuk atap menyerupai sayap burung julang, dirancang untuk iklim dataran
+              tinggi.</p>
+            <span class="card-tag">Arsitektur</span>
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <article class="card-kultura">
+            <div class="icon-box icon-box--blue">
+              <i data-feather="scissors"></i>
+            </div>
+            <h3>Batik Priangan</h3>
+            <p>Batik dengan motif flora dan fauna yang berkembang di kawasan Priangan dengan warna yang khas.</p>
+            <span class="card-tag">Kriya</span>
+          </article>
         </div>
       </div>
-    </nav>
-    <!-- End Navbar -->
+    </div>
+  </section>
+  <!-- End Rumah dan Kriya -->
 
-    <!-- Start Hero -->
-    <section class="hero" id="home">
-      <div class="container-fluid">
-        <div class="d-flex justify-content-center align-items-center vh-100">
-          <h2 class="">Budaya Page</h2>
+  <!-- Start Kuliner -->
+  <section class="section" id="kuliner">
+    <div class="container-fluid">
+      <div class="section-head">
+        <span class="eyebrow">Kuliner</span>
+        <h2>Rasa yang Akrab di Meja Makan</h2>
+        <p>Bahan sederhana diolah menjadi sajian yang dekat dengan keseharian masyarakat Sunda.</p>
+      </div>
+      <div class="teaser-grid">
+        <article class="teaser-card">
+          <div class="icon-box">
+            <i data-feather="coffee"></i>
+          </div>
+          <h3>Nasi Liwet</h3>
+          <p>Nasi yang dimasak bersama santan, bawang, dan daun salam, sering disajikan untuk makan bersama.</p>
+        </article>
+        <article class="teaser-card">
+          <div class="icon-box icon-box--yellow">
+            <i data-feather="sun"></i>
+          </div>
+          <h3>Surabi</h3>
+          <p>Kue dari tepung beras dan santan yang dipanggang di atas tungku, disajikan hangat dengan topping manis.</p>
+        </article>
+        <article class="teaser-card">
+          <div class="icon-box icon-box--blue">
+            <i data-feather="thermometer"></i>
+          </div>
+          <h3>Bandrek</h3>
+          <p>Minuman hangat dari jahe, gula merah, dan rempah yang cocok dinikmati di udara dingin.</p>
+        </article>
+      </div>
+      <div class="mt-4">
+        <a href="destinasi.html#kuliner" class="btn-kultura-outline">Lihat Kuliner Khas <i
+            data-feather="arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+  <!-- End Kuliner -->
+
+  <!-- Start Footer -->
+  <footer>
+    <div class="container-fluid">
+      <div class="row footer-row">
+        <div class="col-lg-5 footer-logo">
+          <img src="./img/logo/kultura.jpeg" alt="Logo Kultura" />
+          <p>
+            Kultura Indonesia merangkum destinasi, sejarah, dan budaya Jawa Barat
+            untuk membantu perjalanan Anda lebih terarah.
+          </p>
+        </div>
+        <div class="col-lg-7">
+          <div class="row footer-nav">
+            <div class="col-md-4 footer-navigation me-3">
+              <h3>Navigasi</h3>
+              <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="destinasi.html">Destinasi</a></li>
+                <li><a href="sejarah.html">Sejarah</a></li>
+                <li><a href="budaya.html">Budaya</a></li>
+                <li><a href="peta.html">Peta Panduan</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4 footer-navigation me-3">
+              <h3>Jelajah</h3>
+              <ul>
+                <li><a href="destinasi.html#alam">Wisata Alam</a></li>
+                <li><a href="destinasi.html#budaya">Wisata Budaya</a></li>
+                <li><a href="destinasi.html#kuliner">Kuliner Khas</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 footer-navigation">
+              <h3>Ikuti Kami</h3>
+              <ul>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">YouTube</a></li>
+                <li><a href="#">Facebook</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-    <!-- End Hero -->
+      <div class="row footer-bottom">
+        <div class="col-md-12">
+          <p>Copyright &copy; 2026 Kultura Indonesia. Hak cipta dilindungi.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
 
-    <!-- Bootstrap JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 
-    <!-- Feather Icon -->
-    <script>
-      feather.replace();
-    </script>
-  </body>
+  <script src="./js/theme.js"></script>
+
+  <!-- Feather Icons -->
+  <script>
+    feather.replace();
+  </script>
+</body>
+
 </html>

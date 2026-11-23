@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Peta panduan wisata Jawa Barat: sebaran destinasi utama dan tips singkat untuk merencanakan perjalanan." />
+  <title>Peta Panduan - Kultura Indonesia</title>
+
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("kultura-theme");
+        document.documentElement.dataset.theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      } catch (error) {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
+
+  <!-- Icon -->
+  <link rel="icon" href="./img/logo/icon-kultura.png" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,500;0,9..40,800;1,9..40,800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Our Style -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <!-- Start Navbar -->
+  <nav class="navbar navbar-expand-lg shadow bg-body-tertiary" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand navbar-logo" href="index.html"><img src="img/logo/kultura.jpeg" alt="Logo Kultura" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item no-drop">
+            <a class="nav-link" href="index.html">Beranda</a>
+          </li>
+          <li class="nav-item no-drop">
+            <a class="nav-link" href="destinasi.html">Destinasi</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="destinasi.html" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Jelajah
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="destinasi.html#alam">Wisata Alam</a></li>
+              <li><a class="dropdown-item" href="destinasi.html#budaya">Wisata Budaya</a></li>
+              <li><a class="dropdown-item" href="destinasi.html#kuliner">Kuliner Khas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item no-drop">
+            <a class="nav-link" href="sejarah.html">Sejarah</a>
+          </li>
+          <li class="nav-item no-drop">
+            <a class="nav-link" href="budaya.html">Budaya</a>
+          </li>
+          <li class="nav-item no-drop">
+            <a class="nav-link active" aria-current="page" href="peta.html">Peta Panduan</a>
+          </li>
+        </ul>
+        <div class="theme">
+          <button type="button" id="themeToggle" class="theme-mode" aria-label="Gunakan tema gelap"
+            aria-pressed="false">
+            <i data-feather="moon" class="theme-icon--moon" aria-hidden="true"></i>
+            <i data-feather="sun" class="theme-icon--sun" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+
+  <!-- Start Page Hero -->
+  <section class="page-hero">
+    <div class="container-fluid">
+      <span class="eyebrow">Peta Panduan</span>
+      <h1>Susun Rute Perjalanan Anda</h1>
+      <p>Lihat sebaran destinasi utama di Jawa Barat, lalu sesuaikan rute dengan waktu tempuh dan minat perjalanan Anda.
+      </p>
+    </div>
+  </section>
+  <!-- End Page Hero -->
+
+  <!-- Start Peta -->
+  <section class="section">
+    <div class="container-fluid">
+      <div class="map-preview">
+        <div class="map-frame">
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=106.30%2C-7.90%2C108.90%2C-5.80&layer=mapnik"
+            title="Peta Jawa Barat" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div>
+          <div class="section-head">
+            <span class="eyebrow">Titik Awal</span>
+            <h2>Destinasi Utama</h2>
+            <p>Beberapa tempat berikut bisa menjadi patokan untuk menyusun rute dari barat ke timur atau sebaliknya.</p>
+          </div>
+          <ul class="map-list">
+            <li>
+              <i data-feather="map-pin"></i>
+              <div>
+                <h3>Kawah Putih</h3>
+                <p>Ciwidey, Kabupaten Bandung</p>
+              </div>
+            </li>
+            <li>
+              <i data-feather="map-pin"></i>
+              <div>
+                <h3>Tangkuban Perahu</h3>
+                <p>Lembang, Kabupaten Bandung Barat</p>
+              </div>
+            </li>
+            <li>
+              <i data-feather="map-pin"></i>
+              <div>
+                <h3>Situ Patenggang</h3>
+                <p>Rancabali, Kabupaten Bandung</p>
+              </div>
+            </li>
+            <li>
+              <i data-feather="map-pin"></i>
+              <div>
+                <h3>Pantai Pangandaran</h3>
+                <p>Kabupaten Pangandaran</p>
+              </div>
+            </li>
+            <li>
+              <i data-feather="map-pin"></i>
+              <div>
+                <h3>Kampung Naga</h3>
+                <p>Salawu, Kabupaten Tasikmalaya</p>
+              </div>
+            </li>
+            <li>
+              <i data-feather="map-pin"></i>
+              <div>
+                <h3>Keraton Kasepuhan</h3>
+                <p>Kota Cirebon</p>
+              </div>
+            </li>
+          </ul>
+          <a href="destinasi.html" class="btn-kultura">Lihat Detail Destinasi <i data-feather="arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Peta -->
+
+  <!-- Start Tips -->
+  <section class="section section--muted">
+    <div class="container-fluid">
+      <div class="section-head">
+        <span class="eyebrow">Sebelum Berangkat</span>
+        <h2>Catatan Perjalanan</h2>
+        <p>Beberapa hal sederhana yang membantu perjalanan tetap nyaman dan terhormat bagi warga setempat.</p>
+      </div>
+      <div class="teaser-grid">
+        <article class="teaser-card">
+          <div class="icon-box icon-box--blue">
+            <i data-feather="cloud"></i>
+          </div>
+          <h3>Perhatikan Cuaca</h3>
+          <p>Dataran tinggi seperti Ciwidey dan Lembang bisa berkabut dan dingin, terutama pagi atau sore.</p>
+        </article>
+        <article class="teaser-card">
+          <div class="icon-box">
+            <i data-feather="navigation"></i>
+          </div>
+          <h3>Hitung Waktu Tempuh</h3>
+          <p>Jarak antardestinasi di Jawa Barat cukup beragam. Sisakan waktu untuk perjalanan dan istirahat.</p>
+        </article>
+        <article class="teaser-card">
+          <div class="icon-box icon-box--yellow">
+            <i data-feather="heart"></i>
+          </div>
+          <h3>Jaga Etika Berkunjung</h3>
+          <p>Di kampung adat atau keraton, ikuti aturan setempat dan minta izin sebelum mengambil foto.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- End Tips -->
+
+  <!-- Start Footer -->
+  <footer>
+    <div class="container-fluid">
+      <div class="row footer-row">
+        <div class="col-lg-5 footer-logo">
+          <img src="./img/logo/kultura.jpeg" alt="Logo Kultura" />
+          <p>
+            Kultura Indonesia merangkum destinasi, sejarah, dan budaya Jawa Barat
+            untuk membantu perjalanan Anda lebih terarah.
+          </p>
+        </div>
+        <div class="col-lg-7">
+          <div class="row footer-nav">
+            <div class="col-md-4 footer-navigation me-3">
+              <h3>Navigasi</h3>
+              <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="destinasi.html">Destinasi</a></li>
+                <li><a href="sejarah.html">Sejarah</a></li>
+                <li><a href="budaya.html">Budaya</a></li>
+                <li><a href="peta.html">Peta Panduan</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4 footer-navigation me-3">
+              <h3>Jelajah</h3>
+              <ul>
+                <li><a href="destinasi.html#alam">Wisata Alam</a></li>
+                <li><a href="destinasi.html#budaya">Wisata Budaya</a></li>
+                <li><a href="destinasi.html#kuliner">Kuliner Khas</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 footer-navigation">
+              <h3>Ikuti Kami</h3>
+              <ul>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">YouTube</a></li>
+                <li><a href="#">Facebook</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row footer-bottom">
+        <div class="col-md-12">
+          <p>Copyright &copy; 2026 Kultura Indonesia. Hak cipta dilindungi.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <script src="./js/theme.js"></script>
+
+  <!-- Feather Icons -->
+  <script>
+    feather.replace();
+  </script>
+</body>
+
+</html>

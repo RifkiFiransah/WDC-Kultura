@@ -1,127 +1,331 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Budaya</title>
+<html lang="id">
 
-    <!-- Icon -->
-    <link rel="icon" href="./img/logo/icon-kultura.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Sejarah Jawa Barat: dari Tarumanagara dan Kerajaan Sunda sampai jejak kesultanan pesisir dan masa kolonial." />
+  <title>Sejarah - Kultura Indonesia</title>
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("kultura-theme");
+        document.documentElement.dataset.theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      } catch (error) {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
 
-    <!-- Featcher Icons -->
-    <script src="https://unpkg.com/feather-icons"></script>
+  <!-- Icon -->
+  <link rel="icon" href="./img/logo/icon-kultura.png" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,500;0,9..40,800;1,9..40,800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
-    <!-- Our Style -->
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <body>
-    <!-- Start Navbar -->
-    <nav class="navbar navbar-expand-lg shadow bg-body-tertiary" id="navbar">
-      <div class="container-fluid">
-        <a class="navbar-brand navbar-logo" href="#"
-          ><img src="img/logo/kultura.jpeg" alt="Logo-Kultura"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item no-drop">
-              <a class="nav-link" aria-current="page" href="index.html"
-                >Beranda</a
-              >
-            </li>
-            <li class="nav-item no-drop">
-              <a class="nav-link" href="destination.html">Destinasi</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Jelajah
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item no-drop">
-              <a class="nav-link" href="sejarah.html">Sejarah</a>
-            </li>
-            <li class="nav-item no-drop">
-              <a class="nav-link" href="budaya.html">Budaya</a>
-            </li>
-          </ul>
-          <div class="theme">
-            <a href="#" class="theme-mode"><i data-feather="moon"></i></a>
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,500;0,9..40,800;1,9..40,800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Our Style -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <!-- Start Navbar -->
+  <nav class="navbar navbar-expand-lg shadow bg-body-tertiary" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand navbar-logo" href="index.html"><img src="img/logo/kultura.jpeg" alt="Logo Kultura" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item no-drop">
+            <a class="nav-link" href="index.html">Beranda</a>
+          </li>
+          <li class="nav-item no-drop">
+            <a class="nav-link" href="destinasi.html">Destinasi</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="destinasi.html" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Jelajah
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="destinasi.html#alam">Wisata Alam</a></li>
+              <li><a class="dropdown-item" href="destinasi.html#budaya">Wisata Budaya</a></li>
+              <li><a class="dropdown-item" href="destinasi.html#kuliner">Kuliner Khas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item no-drop">
+            <a class="nav-link active" aria-current="page" href="sejarah.html">Sejarah</a>
+          </li>
+          <li class="nav-item no-drop">
+            <a class="nav-link" href="budaya.html">Budaya</a>
+          </li>
+          <li class="nav-item no-drop">
+            <a class="nav-link" href="peta.html">Peta Panduan</a>
+          </li>
+        </ul>
+        <div class="theme">
+          <button type="button" id="themeToggle" class="theme-mode" aria-label="Gunakan tema gelap"
+            aria-pressed="false">
+            <i data-feather="moon" class="theme-icon--moon" aria-hidden="true"></i>
+            <i data-feather="sun" class="theme-icon--sun" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+
+  <!-- Start Page Hero -->
+  <section class="page-hero">
+    <div class="container-fluid">
+      <span class="eyebrow">Sejarah</span>
+      <h1>Jejak Panjang Tanah Sunda</h1>
+      <p>Dari kerajaan awal di tepi sungai sampai kota kolonial di dataran tinggi, sejarah Jawa Barat tersimpan dalam
+        prasasti, situs, dan bangunan yang masih bisa dijumpai.</p>
+    </div>
+  </section>
+  <!-- End Page Hero -->
+
+  <!-- Start Intro -->
+  <section class="section">
+    <div class="container-fluid">
+      <div class="history-intro">
+        <div>
+          <div class="section-head">
+            <span class="eyebrow">Garis Besar</span>
+            <h2>Lapisan Sejarah yang Saling Bertemu</h2>
           </div>
-          <!-- <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> -->
+          <p>Jawa Barat memiliki jejak panjang sejak masa kerajaan sampai pembentukan provinsi. Prasasti, situs
+            megalitikum, dan bangunan kolonial menjadi penanda lapisan sejarah yang berbeda.</p>
+          <p>Tarumanagara meninggalkan prasasti di kawasan Bogor, sementara Kerajaan Sunda menjadikan Pakuan sebagai
+            salah satu pusat kekuasaan. Di pesisir utara, Cirebon dan Banten tumbuh sebagai simpul perdagangan dan
+            penyebaran Islam.</p>
+          <p>Pada masa kolonial, Bandung berkembang sebagai kota administrasi dengan gedung-gedung yang masih berdiri.
+            Setelah kemerdekaan, Jawa Barat menjadi salah satu provinsi dengan Bandung sebagai ibu kota.</p>
+        </div>
+        <aside class="history-facts">
+          <h3>Ringkasan Cepat</h3>
+          <ul class="fact-list">
+            <li><i data-feather="clock"></i><span>Jejak kerajaan sejak abad ke-4</span></li>
+            <li><i data-feather="map-pin"></i><span>Prasasti Ciaruteun di Kabupaten Bogor</span></li>
+            <li><i data-feather="layers"></i><span>Situs megalitikum Gunung Padang di Cianjur</span></li>
+            <li><i data-feather="home"></i><span>Keraton Kasepuhan di Kota Cirebon</span></li>
+            <li><i data-feather="award"></i><span>Gedung Sate sebagai landmark Bandung</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <!-- End Intro -->
+
+  <!-- Start Timeline -->
+  <section class="section section--muted">
+    <div class="container-fluid">
+      <div class="section-head">
+        <span class="eyebrow">Kronologi</span>
+        <h2>Perjalanan Waktu</h2>
+        <p>Lima penanda penting untuk membaca perubahan politik dan budaya di Jawa Barat.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="timeline-year">Abad ke-4</span>
+              <h3>Tarumanagara</h3>
+              <p>Kerajaan awal di Jawa Barat meninggalkan Prasasti Ciaruteun dan Kebon Kopi yang menyebut Raja
+                Purnawarman.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-year">Abad ke-7</span>
+              <h3>Pakuan dan Kerajaan Sunda</h3>
+              <p>Kawasan Bogor menjadi salah satu pusat kekuasaan Sunda dengan kehidupan politik dan budaya yang
+                berkembang.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-year">Abad ke-15</span>
+              <h3>Cirebon dan Banten</h3>
+              <p>Kesultanan pesisir tumbuh sebagai simpul perdagangan dan penyebaran Islam di bagian utara Jawa Barat.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-year">1920</span>
+              <h3>Gedung Sate</h3>
+              <p>Pembangunan gedung pemerintahan di Bandung menandai peran kota sebagai pusat administrasi kolonial.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-year">1945</span>
+              <h3>Masa Kemerdekaan</h3>
+              <p>Jawa Barat menjadi bagian Republik Indonesia dengan Bandung sebagai ibu kota provinsi.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="history-facts">
+            <h3>Catatan Kunjungan</h3>
+            <ul class="fact-list">
+              <li><i data-feather="calendar"></i><span>Periksa jam operasional situs sebelum berkunjung.</span></li>
+              <li><i data-feather="camera"></i><span>Beberapa area membatasi penggunaan drone atau lampu kilat.</span></li>
+              <li><i data-feather="users"></i><span>Gunakan pemandu lokal untuk membaca konteks situs.</span></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </nav>
-    <!-- End Navbar -->
+    </div>
+  </section>
+  <!-- End Timeline -->
 
-    <!-- Start Hero -->
-    <section class="hero" id="home">
-      <div class="container-fluid">
-        <div class="d-flex justify-content-center align-items-center vh-100">
-          <h2 class="">Sejarah Page</h2>
+  <!-- Start Situs -->
+  <section class="section">
+    <div class="container-fluid">
+      <div class="section-head">
+        <span class="eyebrow">Jejak di Lapangan</span>
+        <h2>Situs dan Bangunan Bersejarah</h2>
+        <p>Empat tempat yang bisa menjadi titik awal untuk menelusuri sejarah Jawa Barat.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <article class="destination-card">
+            <div class="destination-media destination-media--green">
+              <i data-feather="file"></i>
+              <span>Prasasti</span>
+            </div>
+            <div class="card-body">
+              <h3>Prasasti Ciaruteun</h3>
+              <p>Prasasti peninggalan Tarumanagara yang ditemukan di tepi Sungai Ciaruteun, Kabupaten Bogor.</p>
+              <span class="destination-location"><i data-feather="map-pin"></i>Kabupaten Bogor</span>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <article class="destination-card">
+            <div class="destination-media destination-media--grey">
+              <i data-feather="layers"></i>
+              <span>Situs Megalitikum</span>
+            </div>
+            <div class="card-body">
+              <h3>Situs Gunung Padang</h3>
+              <p>Situs batu berundak di Cianjur yang menjadi salah satu peninggalan megalitikum di Jawa Barat.</p>
+              <span class="destination-location"><i data-feather="map-pin"></i>Kabupaten Cianjur</span>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <article class="destination-card">
+            <div class="destination-media destination-media--yellow">
+              <i data-feather="award"></i>
+              <span>Keraton</span>
+            </div>
+            <div class="card-body">
+              <h3>Keraton Kasepuhan</h3>
+              <p>Keraton di Cirebon yang menyimpan koleksi benda pusaka dan jejak Kesultanan Cirebon.</p>
+              <span class="destination-location"><i data-feather="map-pin"></i>Kota Cirebon</span>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <article class="destination-card">
+            <div class="destination-media destination-media--dark">
+              <i data-feather="home"></i>
+              <span>Arsitektur</span>
+            </div>
+            <div class="card-body">
+              <h3>Gedung Sate</h3>
+              <p>Landmark Bandung yang dibangun pada 1920 dan kini menjadi kantor Gubernur Jawa Barat.</p>
+              <span class="destination-location"><i data-feather="map-pin"></i>Kota Bandung</span>
+            </div>
+          </article>
         </div>
       </div>
-    </section>
-    <!-- End Hero -->
+      <div class="mt-4">
+        <a href="destinasi.html#budaya" class="btn-kultura-outline">Lihat Destinasi Budaya <i
+            data-feather="arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+  <!-- End Situs -->
 
-    <!-- Bootstrap JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+  <!-- Start Footer -->
+  <footer>
+    <div class="container-fluid">
+      <div class="row footer-row">
+        <div class="col-lg-5 footer-logo">
+          <img src="./img/logo/kultura.jpeg" alt="Logo Kultura" />
+          <p>
+            Kultura Indonesia merangkum destinasi, sejarah, dan budaya Jawa Barat
+            untuk membantu perjalanan Anda lebih terarah.
+          </p>
+        </div>
+        <div class="col-lg-7">
+          <div class="row footer-nav">
+            <div class="col-md-4 footer-navigation me-3">
+              <h3>Navigasi</h3>
+              <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="destinasi.html">Destinasi</a></li>
+                <li><a href="sejarah.html">Sejarah</a></li>
+                <li><a href="budaya.html">Budaya</a></li>
+                <li><a href="peta.html">Peta Panduan</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4 footer-navigation me-3">
+              <h3>Jelajah</h3>
+              <ul>
+                <li><a href="destinasi.html#alam">Wisata Alam</a></li>
+                <li><a href="destinasi.html#budaya">Wisata Budaya</a></li>
+                <li><a href="destinasi.html#kuliner">Kuliner Khas</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 footer-navigation">
+              <h3>Ikuti Kami</h3>
+              <ul>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">YouTube</a></li>
+                <li><a href="#">Facebook</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row footer-bottom">
+        <div class="col-md-12">
+          <p>Copyright &copy; 2026 Kultura Indonesia. Hak cipta dilindungi.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
 
-    <!-- Feather Icon -->
-    <script>
-      feather.replace();
-    </script>
-  </body>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <script src="./js/theme.js"></script>
+
+  <!-- Feather Icons -->
+  <script>
+    feather.replace();
+  </script>
+</body>
+
 </html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Destinasi wisata alam, budaya, dan kuliner khas Jawa Barat pilihan Kultura Indonesia." />
+  <title>Destinasi - Kultura Indonesia</title>
+
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("kultura-theme");
+        document.documentElement.dataset.theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      } catch (error) {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
+
+  <!-- Icon -->
+  <link rel="icon" href="./img/logo/icon-kultura.png" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,500;0,9..40,800;1,9..40,800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Our Style -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <!-- Start Navbar -->
+  <nav class="navbar navbar-expand-lg shadow bg-body-tertiary" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand navbar-logo" href="index.html"><img src="img/logo/kultura.jpeg" alt="Logo Kultura" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item no-drop">
+            <a class="nav-link" href="index.html">Beranda</a>
+          </li>
+          <li class="nav-item no-drop">
+            <a class="nav-link active" aria-current="page" href="destinasi.html">Destinasi</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="destinasi.html" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Jelajah
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="destinasi.html#alam">Wisata Alam</a></li>
+              <li><a class="dropdown-item" href="destinasi.html#budaya">Wisata Budaya</a></li>
+              <li><a class="dropdown-item" href="destinasi.html#kuliner">Kuliner Khas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item no-drop">
+            <a class="nav-link" href="sejarah.html">Sejarah</a>
+          </li>
+          <li class="nav-item no-drop">
+            <a class="nav-link" href="budaya.html">Budaya</a>
+          </li>
+          <li class="nav-item no-drop">
+            <a class="nav-link" href="peta.html">Peta Panduan</a>
+          </li>
+        </ul>
+        <div class="theme">
+          <button type="button" id="themeToggle" class="theme-mode" aria-label="Gunakan tema gelap"
+            aria-pressed="false">
+            <i data-feather="moon" class="theme-icon--moon" aria-hidden="true"></i>
+            <i data-feather="sun" class="theme-icon--sun" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+
+  <!-- Start Page Hero -->
+  <section class="page-hero">
+    <div class="container-fluid">
+      <span class="eyebrow">Destinasi</span>
+      <h1>Tempat yang Layak Masuk Rencana Perjalanan</h1>
+      <p>Pilih destinasi sesuai minat Anda: mengejar udara sejuk di dataran tinggi, menyusuri pesisir selatan, atau
+        mengenal tradisi yang masih dijaga hingga sekarang.</p>
+    </div>
+  </section>
+  <!-- End Page Hero -->
+
+  <!-- Start Wisata Alam -->
+  <section class="section" id="alam">
+    <div class="container-fluid">
+      <div class="section-head">
+        <span class="eyebrow">Jelajah</span>
+        <h2>Wisata Alam</h2>
+        <p>Lanskap vulkanik, danau, dan pantai menjadi bagian dari identitas Jawa Barat.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <article class="destination-card">
+            <div class="destination-media destination-media--green">
+              <i data-feather="triangle"></i>
+              <span>Danau Vulkanik</span>
+            </div>
+            <div class="card-body">
+              <h3>Kawah Putih</h3>
+              <p>Danau vulkanik di Ciwidey dengan warna air yang berubah mengikuti cuaca dan kandungan belerang.</p>
+              <span class="destination-location"><i data-feather="map-pin"></i>Ciwidey, Kabupaten Bandung</span>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <article class="destination-card">
+            <div class="destination-media destination-media--dark">
+              <i data-feather="triangle"></i>
+              <span>Kawah Aktif</span>
+            </div>
+            <div class="card-body">
+              <h3>Gunung Tangkuban Perahu</h3>
+              <p>Kawah aktif yang dapat dikunjungi dengan kendaraan, populer lewat legenda Sangkuriang.</p>
+              <span class="destination-location"><i data-feather="map-pin"></i>Lembang, Kabupaten Bandung Barat</span>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <article class="destination-card">
+            <div class="destination-media destination-media--blue">
+              <i data-feather="droplet"></i>
+              <span>Danau</span>
+            </div>
+            <div class="card-body">
+              <h3>Situ Patenggang</h3>
+              <p>Danau tenang di tengah perkebunan teh Rancabali, dikaitkan dengan kisah Ki Santang dan Dewi Rengganis.
+              </p>
+              <span class="destination-location"><i data-feather="map-pin"></i>Rancabali, Kabupaten Bandung</span>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <article class="destination-card">
+            <div class="destination-media destination-media--blue">
+              <i data-feather="umbrella"></i>
+              <span>Pantai</span>
+            </div>
+            <div class="card-body">
+              <h3>Pantai Pangandaran</h3>
+              <p>Pantai di pesisir selatan dengan garis pantai panjang, pasir gelap, dan cagar alam di sekitarnya.</p>
+              <span class="destination-location"><i data-feather="map-pin"></i>Kabupaten Pangandaran</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Wisata Alam -->
+
+  <!-- Start Wisata Budaya -->
+  <section class="section section--muted" id="budaya">
+    <div class="container-fluid">
+      <div class="section-head">
+        <span class="eyebrow">Jelajah</span>
+        <h2>Wisata Budaya</h2>
+        <p>Kunjungi ruang hidup tempat tradisi, arsitektur, dan seni masih dirawat oleh warganya.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <article class="destination-card">
+            <div class="destination-media destination-media--grey">
+              <i data-feather="home"></i>
+              <span>Kampung Adat</span>
+            </div>
+            <div class="card-body">
+              <h3>Kampung Naga</h3>
+              <p>Kampung adat di Tasikmalaya yang mempertahankan rumah panggung dan aturan hidup warganya.</p>
+              <span class="destination-location"><i data-feather="map-pin"></i>Salawu, Kabupaten Tasikmalaya</span>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4">
+          <article class="destination-card">
+            <div class="destination-media destination-media--yellow">
+              <i data-feather="award"></i>
+              <span>Keraton</span>
+            </div>
+            <div class="card-body">
+              <h3>Keraton Kasepuhan</h3>
+              <p>Jejak Kesultanan Cirebon dengan arsitektur, koleksi benda pusaka, dan tradisi keraton.</p>
+              <span class="destination-location"><i data-feather="map-pin"></i>Kota Cirebon</span>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4">
+          <article class="destination-card">
+            <div class="destination-media destination-media--green">
+              <i data-feather="music"></i>
+              <span>Seni Pertunjukan</span>
+            </div>
+            <div class="card-body">
+              <h3>Saung Angklung Udjo</h3>
+              <p>Ruang belajar angklung dan seni Sunda di Bandung yang terbuka untuk kunjungan wisata.</p>
+              <span class="destination-location"><i data-feather="map-pin"></i>Kota Bandung</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Wisata Budaya -->
+
+  <!-- Start Kuliner Khas -->
+  <section class="section" id="kuliner">
+    <div class="container-fluid">
+      <div class="section-head">
+        <span class="eyebrow">Jelajah</span>
+        <h2>Kuliner Khas</h2>
+        <p>Hidangan sederhana dengan bahan lokal menjadi bagian dari pengalaman berwisata di tatar Sunda.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <article class="card-kultura">
+            <div class="icon-box">
+              <i data-feather="coffee"></i>
+            </div>
+            <h3>Nasi Liwet</h3>
+            <p>Nasi yang dimasak bersama santan, bawang, dan daun salam, biasanya disajikan untuk makan bersama.</p>
+            <span class="card-tag">Sajian Utama</span>
+          </article>
+        </div>
+        <div class="col-lg-4">
+          <article class="card-kultura">
+            <div class="icon-box icon-box--yellow">
+              <i data-feather="sun"></i>
+            </div>
+            <h3>Surabi</h3>
+            <p>Kue berbahan dasar tepung beras dengan santan, dipanggang di atas tungku dan disajikan hangat.</p>
+            <span class="card-tag">Kudapan</span>
+          </article>
+        </div>
+        <div class="col-lg-4">
+          <article class="card-kultura">
+            <div class="icon-box icon-box--blue">
+              <i data-feather="thermometer"></i>
+            </div>
+            <h3>Bandrek</h3>
+            <p>Minuman hangat dari jahe, gula merah, dan rempah yang biasa dinikmati di udara dingin.</p>
+            <span class="card-tag">Minuman</span>
+          </article>
+        </div>
+      </div>
+      <div class="mt-4">
+        <a href="peta.html" class="btn-kultura-outline">Lihat Sebaran Destinasi <i data-feather="map"></i></a>
+      </div>
+    </div>
+  </section>
+  <!-- End Kuliner Khas -->
+
+  <!-- Start Footer -->
+  <footer>
+    <div class="container-fluid">
+      <div class="row footer-row">
+        <div class="col-lg-5 footer-logo">
+          <img src="./img/logo/kultura.jpeg" alt="Logo Kultura" />
+          <p>
+            Kultura Indonesia merangkum destinasi, sejarah, dan budaya Jawa Barat
+            untuk membantu perjalanan Anda lebih terarah.
+          </p>
+        </div>
+        <div class="col-lg-7">
+          <div class="row footer-nav">
+            <div class="col-md-4 footer-navigation me-3">
+              <h3>Navigasi</h3>
+              <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="destinasi.html">Destinasi</a></li>
+                <li><a href="sejarah.html">Sejarah</a></li>
+                <li><a href="budaya.html">Budaya</a></li>
+                <li><a href="peta.html">Peta Panduan</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4 footer-navigation me-3">
+              <h3>Jelajah</h3>
+              <ul>
+                <li><a href="destinasi.html#alam">Wisata Alam</a></li>
+                <li><a href="destinasi.html#budaya">Wisata Budaya</a></li>
+                <li><a href="destinasi.html#kuliner">Kuliner Khas</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 footer-navigation">
+              <h3>Ikuti Kami</h3>
+              <ul>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">YouTube</a></li>
+                <li><a href="#">Facebook</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row footer-bottom">
+        <div class="col-md-12">
+          <p>Copyright &copy; 2026 Kultura Indonesia. Hak cipta dilindungi.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <script src="./js/theme.js"></script>
+
+  <!-- Feather Icons -->
+  <script>
+    feather.replace();
+  </script>
+</body>
+
+</html>
