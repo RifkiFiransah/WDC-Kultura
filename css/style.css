@@ -273,11 +273,16 @@ h6 {
 }
 
 #navbar .navbar-toggler {
-  display: grid;
   place-items: center;
   width: 44px;
   height: 44px;
   padding: 0;
+}
+
+@media (max-width: 991.98px) {
+  #navbar .navbar-toggler {
+    display: grid;
+  }
 }
 
 #navbar .navbar-logo img {
