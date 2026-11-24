@@ -761,6 +761,35 @@ h6 {
   height: 100%;
 }
 
+.teaser-card--media {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.teaser-card--media .teaser-media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--surface-muted);
+}
+
+.teaser-card--media .teaser-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.teaser-card--media:hover .teaser-media img {
+  transform: scale(1.04);
+}
+
+.teaser-card--media .teaser-body {
+  padding: 1.5rem;
+}
+
 .teaser-card h3 {
   font-size: 1.1rem;
   font-weight: 700;
@@ -1134,6 +1163,33 @@ h6 {
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--accent);
+}
+
+.card-kultura--media {
+  padding: 0;
+  overflow: hidden;
+}
+
+.card-kultura--media .teaser-media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--surface-muted);
+}
+
+.card-kultura--media .teaser-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.card-kultura--media:hover .teaser-media img {
+  transform: scale(1.04);
+}
+
+.card-kultura--media .teaser-body {
+  padding: 1.5rem;
 }
 
 /* History intro */
