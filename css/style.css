@@ -31,7 +31,7 @@
   --on-dark: #ffffff;
   --on-warning: #111111;
   --focus: #075e37;
-  --scrim: var(--scrim);
+  --scrim: rgba(0, 0, 0, 0.55);
   --shadow: 0 12px 30px rgba(17, 17, 17, 0.08);
   --green-ink: #075e37;
   --green-strong: #087a43;
@@ -485,28 +485,32 @@ h6 {
     transparent
   );
   pointer-events: none;
-}
-
-.hero-pict i,
-.hero-pict span {
-  position: relative;
   z-index: 1;
 }
 
-.hero-pict i {
-  width: 1.35rem;
-  height: 1.35rem;
-  margin-bottom: 0.45rem;
+.hero-pict img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .hero-pict span {
+  position: relative;
+  z-index: 2;
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
 .hero-pict--3::after {
-  background: none;
+  background: linear-gradient(
+    0deg,
+    var(--scrim),
+    transparent
+  );
 }
 
 .hero-pict--1 {
@@ -519,7 +523,7 @@ h6 {
 
 .hero-pict--3 {
   background-color: var(--warning);
-  color: var(--on-warning);
+  color: var(--on-dark);
 }
 
 .hero-pict--4 {
@@ -620,20 +624,21 @@ h6 {
     transparent
   );
   pointer-events: none;
+  z-index: 1;
 }
 
-.destinasi-pict i {
+.destinasi-pict img {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 1.25rem;
-  height: 1.25rem;
-  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .destinasi-pict span {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -641,7 +646,11 @@ h6 {
 }
 
 .destinasi-pict--yellow::after {
-  background: none;
+  background: linear-gradient(
+    0deg,
+    var(--scrim),
+    transparent
+  );
 }
 
 .destinasi-pict--green {
@@ -654,7 +663,7 @@ h6 {
 
 .destinasi-pict--yellow {
   background-color: var(--warning);
-  color: var(--on-warning);
+  color: var(--on-dark);
 }
 
 .destinasi-pict--dark {
@@ -1058,21 +1067,21 @@ h6 {
     transparent
   );
   pointer-events: none;
+  z-index: 1;
 }
 
-.destination-media i {
+.destination-media img {
   position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
-  width: 1.25rem;
-  height: 1.25rem;
-  opacity: 0.9;
-  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .destination-media span {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -1080,7 +1089,11 @@ h6 {
 }
 
 .destination-media--yellow::after {
-  background: none;
+  background: linear-gradient(
+    0deg,
+    var(--scrim),
+    transparent
+  );
 }
 
 .destination-media--green {
@@ -1093,7 +1106,7 @@ h6 {
 
 .destination-media--yellow {
   background-color: var(--warning);
-  color: var(--on-warning);
+  color: var(--on-dark);
 }
 
 .destination-media--dark {
