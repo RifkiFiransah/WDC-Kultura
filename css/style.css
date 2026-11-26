@@ -395,6 +395,29 @@ h6 {
   position: relative;
 }
 
+#home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("../img/destinasi/tangkuban-perahu.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 90%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 90%);
+  pointer-events: none;
+}
+
+[data-theme="dark"] #home::before {
+  opacity: 0.28;
+}
+
+#home > .container-fluid {
+  position: relative;
+  z-index: 1;
+}
+
 #home .hero-title {
   width: min(48rem, 80%);
   margin: auto;
