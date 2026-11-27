@@ -1469,3 +1469,34 @@ footer .footer-bottom p {
   }
 
 }
+
+/* Motion */
+@keyframes motion-rise {
+  from {
+    opacity: 0;
+    translate: 0 16px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+.motion-in {
+  animation: motion-rise 0.55s cubic-bezier(0.22, 0.68, 0.35, 1) both;
+  animation-delay: var(--motion-delay, 0ms);
+}
+
+#home .hero-card {
+  transform: translate3d(var(--hero-x, 0), var(--hero-y, 0), 0);
+  transition: transform 0.35s ease-out;
+}
+
+.destination-card,
+.card-kultura,
+.teaser-card {
+  transform: perspective(800px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg))
+    translateY(var(--card-lift, 0px));
+  transition: transform 0.25s ease;
+}
